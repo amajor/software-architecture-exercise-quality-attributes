@@ -100,6 +100,8 @@ With the numbers under the output "Module Dependency Frequencies," you can now d
 3. Let's calculate **frequency**. Frequency is how many times each value occurs. Using the range of cells in column 'A', you can use a formula like `=COUNTIF(A2:A15, C2)` to count the occurrences of each value, replacing `C2` with the appropriate cell. For the "More" value, use a formula like `=COUNTIF(A2:A15, ">=10")`
 4. Visuals are helpful when analyzing frequencies. Create a bar graph using your values (x-axis) and their frequencies (y-axis)
 
+![image](./coupling/Coupling_Example.png)
+
 Remember that we want LOW coupling for projects. We generally have low coupling if the larger bars in your graph are for lower numbers. If the bars in your graph are bigger for higher numbers, we may have higher coupling.
 
 What does your bar graph tell you about the repository you are analyzing? What should the team working on that repository consider to improve or maintain this particular quality attribute?
