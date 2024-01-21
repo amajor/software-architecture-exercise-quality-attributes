@@ -108,6 +108,32 @@ What does your bar graph tell you about the repository you are analyzing? What s
 
 ## Cohesion
 
+Cohesion measures how a class's healthy methods and member variables belong. As a rule of thumb, a good design should exhibit HIGH cohesion and low coupling.
+
+You will need the tool `cohesion` (pypi.org/project/cohesion) installed. If you already have `pip` installed, you can use the command:
+
+```bash
+python3 -m pip install cohesion
+```
+
+Find class cohesion for all classes in the project by executing the following command (replacing pythonCodeDirectory with the correct directory):
+
+
+```bash
+cohesion -d pythonCodeDirectory/ | grep Total |sed 's/\s\{1,\}Total: \(.*\)\%$/\1/'
+```
+
+This will output a bunch of numbers. Similar to the example in the Coupling explanation, you can make a bar graph that shows the frequency of the values you outputted. Instead of individual values, you may want to calculate based on ranges.
+
+1. Copy that list of numbers into a spreadsheet (column 'A').
+2. Review the values and create ranges up to 100%. (column 'C')
+3. Let's calculate frequency. Frequency is how many times each value occurs in each range. Using the range of cells in column 'A', you can use a formula like `=COUNTIFS(A2:A45,B2,A2:A45,C2)` to count the occurrences of each value, replacing `C2` with the appropriate cell. For the "More" value, use a formula like `=COUNTIF(A2:A45,B11)` where the value in `B11` is `>90`
+4. Visuals are helpful when analyzing frequencies. Create a bar graph using your values (x-axis) and their frequencies (y-axis)
+
+![image](./cohesion/Cohesion_Example.png)
+
+What does your analysis of the cohesion values tell you about the project? 
+
 ## Commit Size
 
 ## Maintainability Index
