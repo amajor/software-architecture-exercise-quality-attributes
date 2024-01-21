@@ -136,4 +136,28 @@ What does your analysis of the cohesion values tell you about the project?
 
 ## Commit Size
 
+Remember that one of the quality metrics that we are interested in is modifiability/changeability (the amount of effort needed to change the system, add more functionality or fix bugs).
+
+As a proxy for measuring modifiability, we will use the number of files that need to be changed in a git commit.
+
+A commit typically represents implementing a new feature, deprecating an old feature, or fixing a bug.
+
+Good architecture should allow new features to be added to the system with the least necessary file changes.
+
+In other words, changes should be local to a handful of files/modules. We should see small numbers of changes per commit.
+
+Find the number of files changed in git commits using the following command. The command needs to be executed from within the git directory of the project. 
+
+```bash
+git log --stat | grep '[0-9]\{1,\} file[s]* changed' | sed 's/\([0-9]\{1,\}\) file.*/\1/'
+```
+
+This will output a bunch of numbers. Similar to the example in the Coupling explanation, you can make a bar graph that shows the frequency of the values you outputted.
+
+![image](./commit-size/Commit_Example.png)
+
+If you have a higher frequency of smaller numbers, that means that most git commits focused on changing few files (which can also indicate that features can be added or updated without touching a lot of files).
+
+What does your analysis tell you about the project? Does the team tend to change a lot of files at once, or can they generally make changes pretty easily, touching few files per commit?
+
 ## Maintainability Index
