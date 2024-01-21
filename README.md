@@ -161,3 +161,23 @@ If you have a higher frequency of smaller numbers, that means that most git comm
 What does your analysis tell you about the project? Does the team tend to change a lot of files at once, or can they generally make changes pretty easily, touching few files per commit?
 
 ## Maintainability Index
+
+Find Maintainability Index (MI) for all modules in a project by using the following command.
+
+```bash
+radon mi -s pythonCodeDirectory/ |grep -v ERROR |sed 's/.* - .*(\([0-9]\{1,\}\).*/\1/'
+```
+
+`pythonCodeDirectory/`: the source code directory in the above example; replace as appropriate.
+
+Similar to the Cohesion example, where you might generate a bar graph based on the frequency of values in a range, you can generate a similar visual for analysis of the Maintainability Index.
+
+![image](./maintainability-index/Maintainability_Example.png)
+
+For your analysis, understand what the MI means. Remember, we're using radon to calculate the MI, which will provide scores in a range of 0 to 100. Microsoft provides us with a way to weigh the score as "good" or "bad":
+
+- Green Rating: between 20 and 100 (code has good maintainability)
+- Yellow Rating: between 10 and 19 (moderately maintainable)
+- Red Rating: between 0 and 9 (low maintainability)
+
+What do the values you've found tell you about this project? What should the team do to improve or keep the MI they currently have in the projects analyzed?
