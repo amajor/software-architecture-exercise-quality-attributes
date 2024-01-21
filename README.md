@@ -61,7 +61,7 @@ Now you have two new files:
 * `packages_requestsCode.dot`
 * `classes_requestsCode.dot`
 
-We can use our `coupling.py` script to do some quick parsing for us (download [here](https://github.com/amajor/software-architecture-quality-attributes/blob/main/coupling.py)):
+We can use our `coupling.py` script to do some quick parsing for us (download [here](https://github.com/amajor/software-architecture-quality-attributes/blob/main/coupling/coupling.py)):
 
 ```bash
 # Navigate into whatever directory holds this file
