@@ -16,7 +16,7 @@ This exercise will help you gather metrics to analyze several quality metrics in
 Here are a few public Python repositories that you might analyze:
 
 1. `pallets/flask` - https://github.com/pallets/flask
-2. `requests/requests` - https://github.com/requests/requests
+2. `psf/requests` - https://github.com/psf/requests
 3. `sqlmapproject/sqlmap`	- https://github.com/sqlmapproject/sqlmap
 4. `fail2ban/fail2ban` - https://github.com/fail2ban/fail2ban
 5. `s3tools/s3cmd` - https://github.com/s3tools/s3cmd
@@ -31,20 +31,18 @@ Coupling measures the level of dependency between various packages/modules in a 
 You will need a tool called `pyreverse`. This tool is now included with installations of `pylint` (https://pylint.readthedocs.io/en/latest/pyreverse.html).
 
 ```bash
-# Confirm if you already have pyreverse installed
+# Confirm if you already have pyreverse installed (this will show the help docs if it is installed)
 pyreverse -h
-
-# This will output the help docs if it is installed
 ```
 
 Once you have `pyreverse`, we can use it to generate some `dot` files to analyze.
 
-First, know where the majority of your Python files reside. For example, if we are going to analyze `requests/requests,` the Python files reside in the path `[src/requests]([url](https://github.com/psf/requests/tree/main/src/requests))`; we can tell by clicking in the file structure in the repository and looking for `.py` files.
+First, know where the majority of your Python files reside. For example, if we are going to analyze [`psf/requests`](https://github.com/psf/requests), we'll find the Python files reside in the path [`src/requests`](https://github.com/psf/requests/tree/main/src/requests); we can tell by clicking in the file structure in the repository and looking for `.py` files.
 
-Let's generate `dot` files using the path `./src/requests/` and use the filenaming prefix `requestsCode`:
+Let's generate `dot` files using the path `./src/requests/` and use the file naming prefix `requestsCode` for our example:
 
 ```bash
-# First, be sure you are inside of the repository folder.
+# First, be sure you are inside the repository folder.
 # Use `cd` to "change directory" to where you need to be after you've cloned the project.
 cd requests
 
@@ -63,11 +61,11 @@ Now you have two new files:
 * `packages_requestsCode.dot`
 * `classes_requestsCode.dot`
 
-We can use our `pyreverse_client.py` script to do some quick parsing for us (download here):
+We can use our `coupling.py` script to do some quick parsing for us (download [here](https://github.com/amajor/software-architecture-quality-attributes/blob/main/coupling.py)):
 
 ```bash
 # Navigate into whatever directory holds this file
-python3 pyreverse_client.py
+python3 coupling.py
 ```
 
 You will be prompted to input the path to the packages dot file (named something like `package_xxx.dot`).
