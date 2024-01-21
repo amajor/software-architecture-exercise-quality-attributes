@@ -2,9 +2,12 @@ Software Architecture & Design
 # Quality Metrics
 This exercise will help you gather metrics to analyze several quality metrics in several Python repositories.
 
-1. [Choose Repositories](url)
-2. [Collect Metrics](url)
-   1. [Coupling](url)
+1. [Choose Repositories](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#choose-repositories)
+2. [Collect Metrics](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#collect-metrics)
+   1. [Coupling](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#coupling)
+   2. [Cohesion](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#cohesion)
+   3. [Commit Size](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#commit-size)
+   4. [Maintainability Index](https://github.com/amajor/software-architecture-quality-attributes/blob/main/README.md#maintainability-index)
 
 ---
 
@@ -102,3 +105,9 @@ With the numbers under the output "Module Dependency Frequencies," you can now d
 Remember that we want LOW coupling for projects. We generally have low coupling if the larger bars in your graph are for lower numbers. If the bars in your graph are bigger for higher numbers, we may have higher coupling.
 
 What does your bar graph tell you about the repository you are analyzing? What should the team working on that repository consider to improve or maintain this particular quality attribute?
+
+## Cohesion
+
+## Commit Size
+
+## Maintainability Index
