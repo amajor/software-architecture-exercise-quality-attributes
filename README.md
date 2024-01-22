@@ -26,6 +26,8 @@ Here are a few public Python repositories that you might analyze:
 
 ## Coupling
 
+📺 [Quality Metrics - Coupling](https://youtu.be/cS7wtvOnH9Y)
+
 Coupling measures the level of dependency between various packages/modules in a system. We desire LOW coupling (low dependencies).
 
 You will need a tool called `pyreverse`. This tool is now included with installations of `pylint` (https://pylint.readthedocs.io/en/latest/pyreverse.html).
@@ -108,6 +110,8 @@ What does your bar graph tell you about the repository you are analyzing? What s
 
 ## Cohesion
 
+📺 [Quality Metrics - Cohesion](https://youtu.be/7x4qMBU143g)
+
 Cohesion measures how a class's healthy methods and member variables belong. As a rule of thumb, a good design should exhibit HIGH cohesion and low coupling.
 
 You will need the tool `cohesion` (pypi.org/project/cohesion) installed. If you already have `pip` installed, you can use the command:
@@ -134,7 +138,9 @@ This will output a bunch of numbers. Similar to the example in the Coupling expl
 
 What does your analysis of the cohesion values tell you about the project? 
 
-## Commit Size
+## Modifiability / Changeability (Commit Size)
+
+📺 [Quality Metrics - Modifiability / Changeability](https://youtu.be/B6W_Z_zjm1M)
 
 Remember that one of the quality metrics that we are interested in is modifiability/changeability (the amount of effort needed to change the system, add more functionality or fix bugs).
 
@@ -162,7 +168,9 @@ What does your analysis tell you about the project? Does the team tend to change
 
 ## Maintainability Index
 
-Find Maintainability Index (MI) for all modules in a project by using the following command.
+📺 [Quality Metrics - Maintainability Index](https://youtu.be/0JhcrZvEWLA)
+
+Find the Maintainability Index (MI) for all modules in a project by using the following command.
 
 ```bash
 radon mi -s pythonCodeDirectory/ |grep -v ERROR |sed 's/.* - .*(\([0-9]\{1,\}\).*/\1/'
